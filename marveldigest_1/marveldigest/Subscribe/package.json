@@ -1,0 +1,17 @@
+{
+  "name": "subscribe-page",
+  "version": "1.0.0",
+  "description": "Professional subscribe page with Netlify Functions and Google Sheets integration.",
+  "main": "functions/subscribe.js",
+  "scripts": {
+    "send:newsletter": "node scripts/sendNewsletter.js",
+    "build": "your-static-site-generator build",
+    "postbuild": "node scripts/postToSocial.js"
+  },
+  "dependencies": {
+    "googleapis": "^105.0.0",
+    "nodemailer": "^6.9.0",
+    "dotenv": "^16.0.0",
+    "node-fetch": "^2.6.7"
+  }
+}

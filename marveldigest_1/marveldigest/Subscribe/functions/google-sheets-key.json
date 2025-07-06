@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "marvel-digest-official",
+  "private_key_id": "dafef28bfecc9be23df9c118a62e3563a4979eaa",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDBmw8i/e0ZWsNu\nw/lmmCGYvVefgxzJFxALUu18PQvE3u2arDkMRzaxE0uXrAgpVw1Y4AyGl7AT70Ay\nfU1XAiLWd1PDIRlgeUC3zBqUnYhEEyoSeHA/taJM0B9oZW4gJsRseAKvRIrxPgij\nJUhAJjrmXPvkUd7Izg1VS1TOpij2GShE4x7nMu2jL5AMPfP7uPOfrJCN5ZCuhwM4\ntpOAk03TdsRPGsrGA9iKx+T2LSyaWf0oJpBV1Z9EaaxT6PlRhMU1AcVxqzGdzanu\npbeLlH6WCL2QS30y8Kd22DT9STMqJ7vJqA/437FUpb6/HE/wSDuPDjcTMpXEzm0R\na+oeWnt7AgMBAAECggEAERq/5ZmFfv3z0i9iM1wxa6seuKr+ug1dj4KOFLHX/lar\nq0SX7avE+zP3M7kxJ2XXegihUqrIFZrHky5azNsVdNkp/01HTqynuRVBK+wXA9yl\nlOgrEpXbdunUPIbpidGi/OpFYnKty85tOOysS26VOZDxeCR7iEYcC3MSVQd9CvDa\no2euxwfZ+eAbnhhHubLPmD+4j+RMYctOL0OfKqTfkEmyFMIz2fGaW5VpHhW/CcFm\nOyXoMITnePYSbfdt3N7g/DG6cG5WTwtQj0Bh+hx5SA54WNHqf1ruEiOQkLXm7vEB\nlhgKcwEbaZTP3/s2rXxWXkmxbIwKdyBDu5US4K14QQKBgQDsYPt837sKm4GBpXIU\nVeQagFOF/Y/UduX4a1J3jrd83EQPzNDeKnKy4E1vl/kCkEPEUSXBFsbRW0lvyYYq\n69n3POa/2lT7qVyR/353v6NrqyrE6RpuynHPcPLOnWmEUsafREuAWIz7BRdt0RTj\npQUacmpWTpb4GP2HiMHZcT7qawKBgQDRrSdLEpUcsoUMRTK5RVUZt3mMCj1RIGLg\nxg9gMx3zlAOlGjIy0DS56GNvpHdR8U66c5qG+0X75jpZixmBt248z5LnE4tSz1GK\nxw26P39hxaZVAO9LuKMJUZtasJaRiMTsdKpD+U02DyuQ1BJFRCSgxlTV+BjJIFUP\nGhffbsAXMQKBgCGN1sUwISXtUyHrMVlvo9SbOMABcWRQiG6OFYPBL4y627J+eXu/\n/M4lhvh7Uy6o+eWpOznAmPJpCfCjY7c+CY/OBldfj8a1kN1srjAjdPg4sPaIvGbT\nt/ohZ2Yq9CqDcYx0Ll+GsmSDoYLGNjfmWeYaLbwYpdeL/Jk7sYDDUZIHAoGAB149\nVj8F7Gc9k6vO14HfNrMi20/0zagEsX9kRO4m7EtUQXYFM5HreGj5LZAq/T8slBLB\n6GJmGC8D9+eScuN+RTbKI8KlD7jnVagfDF9023u1l6Ebx55qZEZw3iP8dorG2MRU\nw2S8WNz5m/JH3hVB8EBn9MjuHgs70fcJxbk/mNECgYEAyJi0lqYddzyREQM0AVj4\nb5098inUSNWjoP3Ip9Bk2e2zU0dqgFApAeLvhyRvjiK9D6R39KL5SC7kabU3cavK\n87hklzeHAhZVqmd5ai026uR6S7cTRxL7hnDo4RrwAREItxAPqc7eggsEYr1Kfv8b\nxWf/Ukzwob0gEdR6CmSCA98=\n-----END PRIVATE KEY-----\n",
+  "client_email": "marvel-digest@marvel-digest-official.iam.gserviceaccount.com",
+  "client_id": "109706269298791860892",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/marvel-digest%40marvel-digest-official.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

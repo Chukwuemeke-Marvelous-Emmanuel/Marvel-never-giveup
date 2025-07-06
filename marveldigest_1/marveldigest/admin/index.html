@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Content Manager</title>
+  </head>
+  <body>
+    <!-- Netlify CMS will mount here -->
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  </body>
+</html>
+<script>
+  // Initialize Netlify CMS
+  if (window.CMS) {
+    window.CMS.init();
+  } else {
+    console.error("Netlify CMS is not loaded.");
+  }
+    // Optionally, you can configure CMS here
+    window.CMS.registerPreviewStyle("/admin/categories/admin/index.css", { raw: true });
+    window.CMS.registerPreviewTemplate("index", "/admin/categories/admin/index.html");
+    window.CMS.registerEditorComponent({
+      id: "custom-component",
+      label: "Custom Component",
+      fields: [
+        { name: "text", label: "Text", widget: "string" },
+        { name: "image", label: "Image", widget: "image" }
+      ],
+      pattern: /^<custom-component text="(.*)" image="(.*)">$/,
+      fromBlock: function(match) {
+        return {
+          text: match[1],
+          image: match[2]
+        };
+      },
+      toBlock: function(obj) {
+        return `<custom-component text="${obj.text}" image="${obj.image}">`;
+      },
+      toPreview: function(obj) {
+        return `<div>${obj.text} <img src="${obj.image}" alt="${obj.text}"></div>`;
+      }
+    });
+</script>
+<script>
+  // Custom script to handle additional functionality
+  document.addEventListener("DOMContentLoaded", function() {
+    console.log("Netlify CMS is ready.");
+    // Add any additional initialization code here
+    window.CMS.registerWidget("custom-widget", {
+      // Define your custom widget here
+      // This is just a placeholder for demonstration
+      pattern: /^<custom-widget>(.*)<\/custom-widget>$/,
+      fromBlock: function(match) {
+        return { content: match[1] };
+      },
+      toBlock: function(obj) {
+        return `<custom-widget>${obj.content}</custom-widget>`;
+      },
+      toPreview: function(obj) {
+        return `<div class="custom-widget-preview">${obj.content}</div>`;
+      }
+    });
+  });
+</script>
+
+

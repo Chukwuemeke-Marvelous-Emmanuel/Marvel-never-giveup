@@ -1,0 +1,31 @@
+
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.marveldigest.com/posts/optimize-workflow.html"
+    },
+    "headline": "How to Optimize Your Workflow",
+    "image": [
+      "https://www.marveldigest.com/images/workflow-cover.jpg"
+    ],
+    "datePublished": "2025-06-09T08:30:00Z",
+    "dateModified": "2025-06-09T08:30:00Z",
+    "author": {
+      "@type": "Person",
+      "name": "Marvelous Emmanuel"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Marvel Digest",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.marveldigest.com/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "Learn best practices for streamlining your daily workflow."
+}
+

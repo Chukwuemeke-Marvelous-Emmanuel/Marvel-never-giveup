@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  
+  <meta name="robots" content="index, follow" />
+
+  <!-- 2. Viewport & title -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marvel Real Estat</title>
+  <link rel="canonical" href="https://marveldigest.com/" />
+
+  <!-- 3. Verification tags -->
+  <!-- Google Search Console -->
+  <meta name="google-site-verification"tFT90dW6yBj3IDjPdwsx2LgoLAUdWCKfjZEeZsapXZ0" />
+    
+  <!-- Bing Webmaster Tools -->
+  <meta name="msvalidate.01" content="481CCEFFF39A22EE358F8C54EBDFD270" />
+
+  <!-- 4. Sitemap & RSS -->
+  <link rel="alternate" type="application/rss+xml" title="Marvel Real Estat RSS" href="/feed.xml" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+  <!-- 5. Favicons & touch icon -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <!-- 6. Social sharing (Open Graph + Twitter) -->
+  <meta property="og:title" content="Marvel Real Estat" />
+  <meta property="og:description" content="Your go-to source for real estate insights and listings." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com/" />
+  <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Marvel Real Estat" />
+  <meta name="twitter:description" content="Your go-to source for real estate insights and listings." />
+  <meta name="twitter:image" content="https://marveldigest.com/twitter-image.jpg" />
+
+  <!-- 7. Theme color (mobile browsers) -->
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- 8. Stylesheets & any scripts -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- … -->
+
+  
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">Marvel Real Estate</div>
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <nav id="navLinks">
+        <a href="#">Home</a>
+        <a href="#">Listings</a>
+        <a href="#" id="addNav">Add Property</a>
+      </nav>
+    </div>
+  </header>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search by title or price..." />
+    <button id="searchBtn">Search</button>
+  </div>
+  <main>
+    <div class="controls">
+      <button id="addMain">+ Add Property</button>
+      <div>
+        <label for="sortSelect">Sort:</label>
+        <select id="sortSelect">
+          <option value="">Default</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="title-asc">Title: A-Z</option>
+          <option value="title-desc">Title: Z-A</option>
+        </select>
+      </div>
+      <div>
+        <label for="itemsSelect">Items/Page:</label>
+        <select id="itemsSelect">
+          <option value="6">6</option>
+          <option value="12">12</option>
+          <option value="24">24</option>
+          <option value="all">Show All</option>
+        </select>
+      </div>
+    </div>
+    <div class="grid" id="propertyGrid"></div>
+    <div class="pagination" id="pagination"></div>
+  </main>
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h2>Add Property</h2>
+      <label>Title<input type="text" id="title" /></label>
+      <label>Description<textarea id="description" rows="3"></textarea></label>
+      <label>Price (Naira)<input type="number" id="price" /></label>
+      <label>Image<input type="file" id="image" accept="image/*" /></label>
+      <label>Video<input type="file" id="video" accept="video/*" /></label>
+      <div class="actions">
+        <button id="cancelBtn">Cancel</button>
+        <button id="saveBtn">Save</button>
+      </div>
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>

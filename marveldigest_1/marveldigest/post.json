@@ -1,0 +1,29 @@
+[
+  {
+    "id": "how-to-build-electric-go-kart",
+    "title": "How to Build Your First Electric Go-Kart",
+    "author": "Periodismo.com",
+    "authorLogoUrl": "/images/periodismo-logo.png",
+    "featuredImageUrl": "/images/go-kart-hero.jpg",
+    "publishDate": "2025-05-20",
+    "likeCount": 42,
+    "dislikeCount": 3,
+    "excerpt": "A step-by-step guide to assembling your very own backyard electric go-kart…",
+    "postUrl": "/blog/how-to-build-electric-go-kart"
+  },
+  {
+    "id": "political-loyalty-fallacy",
+    "title": "Tinubu, Aregbesola, Atiku and the fallacy of eternal political loyalty",
+    "author": "The Punch",
+    "authorLogoUrl": "/images/thepunch-logo.png",
+    "featuredImageUrl": "/images/nigerian-politicians.jpg",
+    "publishDate": "2025-05-30",
+    "likeCount": 2,
+    "dislikeCount": 0,
+    "excerpt": "Why political allegiance in Nigeria is shifting as old alliances break down…",
+    "postUrl": "/blog/political-loyalty-fallacy"
+  }
+]
+
+
+

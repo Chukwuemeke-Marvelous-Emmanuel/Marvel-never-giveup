@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Let crawlers index and follow links -->
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Subscribe to Our Newsletter</title>
+  
+  <!-- SEO metas -->
+  <meta name="description" content="Subscribe to our newsletter for the latest articles, updates, and exclusive tips delivered straight to your inbox." />
+  <meta name="keywords" content="subscribe, newsletter, articles, updates, tips" />
+  <meta name="author" content="Marvel Digest Team" />
+  <meta name="copyright" content="© 2025 Marvel Digest. All rights reserved." />
+
+  <meta name="google-site-verification"tFT90dW6yBj3IDjPdwsx2LgoLAUdWCKfjZEeZsapXZ0" />
+
+  <!-- Bing Webmaster verification -->
+  <meta name="msvalidate.01" content="481CCEFFF39A22EE358F8C54EBDFD270" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://marveldigest.com/subscribe.html" />
+
+  <!-- Sitemap for crawlers -->
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./css/styles_subscribe.css" />
+
+  <!-- (Optional) Open Graph & Twitter Card for sharing -->
+  <meta property="og:title" content="Subscribe to Our Newsletter" />
+  <meta property="og:description" content="Get the latest articles, updates, and tips delivered straight to your inbox. Sign up today!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://marveldigest.com/subscribe.html" />
+  <meta property="og:image" content="https://marveldigest.com/images/subscribe-og.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Subscribe to Our Newsletter" />
+  <meta name="twitter:description" content="Get the latest articles, updates, and tips delivered straight to your inbox. Sign up today!" />
+  <meta name="twitter:image" content="https://marveldigest.com/images/subscribe-twitter.jpg" />
+</head>
+<body>
+  <!-- … -->
+
+
+  
+<body>
+   <div class="logo">
+    <h3>
+      <a class="marvel" href="index.html">
+        Marvel Digest
+      </a>
+    </h3>
+     <img class="marvel-digest" src="./images/Designer.jpeg" alt="Marvel Digest"/>
+   </div>
+
+  <div class="subscribe-container">
+    <div class="subscribe-card">
+      <h1>Join Our Community</h1>
+      <p>Subscribe to receive fresh articles, updates, and exclusive tips straight to your inbox.</p>
+
+      <form class="subscribe-form" id="subscribeForm" data-netlify="true" netlify-honeypot="bot-field" method="POST" action="/.netlify/functions/subscribe">
+        <input type="hidden" name="form-name" value="subscribeForm" />
+        <label for="email" class="visually-hidden">Email address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="you@example.com"
+          required
+          autocomplete="email"
+        />
+        <div class="error-message" id="errorMessage"></div>
+        <button type="submit" id="subscribeButton">Subscribe</button>
+      </form>
+
+      <!-- will be shown after successful submission -->
+      <div class="success-message" id="successMessage" style="display: none;">
+        🎉 Thank you for subscribing! You’ll hear from us whenever new content is live.
+      </div>
+    </div>
+  </div>
+  
+      
+   <!-- Footer -->
+  <footer id="footer">
+  
+    <p class="p1">Follow us on <br>
+      <a href="https://twitter.com/marvel_digest" target="_blank">Twitter</a> <br>
+      <a href="https://instagram.com/marvel_digest" target="_blank">Instagram</a> <br>
+      <a href="https://instagram.com/marvel_digest" target="_blank">Facebook</a>.</p>
+     <div class="copyright" id="copyright-notice"></div>
+  <ul>
+    <div class="last-child" id="footer-links">
+    <div class="footer-links">
+    <li><a href="/advertise">Advertise</a></li>
+    <li><a href="/about-us">About Us</a></li>
+    <li><a href="/contact-us">Contact Us</a></li>
+    <li><a href="/privacy-policy">Privacy Policy</a></li>
+    <li><a href="/terms-of-service">Terms of Service</a></li>
+    </div>
+    </div>
+  </ul>  
+  </footer>
+
+  <script src="js/subscribe.js"></script>
+</body>
+</html>

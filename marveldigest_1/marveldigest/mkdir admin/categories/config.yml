@@ -1,0 +1,796 @@
+     
+      backend:
+      name: git-gateway   
+      repo: chukwuemeke-Marvelous-Emmanuel/Marvel-Digest
+      branch: main             
+
+      media_folder: "static/images/uploads"     
+      public_folder: "/images/uploads"        
+
+      collections:
+      - name: "posts"
+      label: "Blog Posts"
+      folder: "content/posts"
+      create: true
+      slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+      fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  
+
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body",  name: "body",  widget: "markdown" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Image", name: "image", widget: "image" } 
+      - { label: "Featured", name: "featured", widget: "boolean" }
+      - { label: "Draft", name: "draft", widget: "boolean" }
+      - { label: "Category", name: "category", widget: "relation", collection: "categories", searchFields: ["name"], valueField: "name" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "SEO Title", name: "seo_title", widget: "string" }
+      - { label: "SEO Description", name: "seo_description", widget: "text" } 
+      - { label: "SEO Image", name: "seo_image", widget: "image" }
+      - { label: "SEO Keywords", name: "seo_keywords", widget: "list" }
+      - { label: "SEO Robots", name: "seo_robots", widget: "select", options: ["index, follow", "noindex, nofollow"] }
+      - { label: "SEO Canonical", name: "seo_canonical", widget: "string" }
+
+      - { label: "SEO Pinterest Title",        name: "seo_pinterest_title",         widget: "string" }
+      - { label: "SEO Pinterest Description",  name: "seo_pinterest_description",   widget: "text" }
+      - { label: "SEO Pinterest Site",         name: "seo_pinterest_site",          widget: "string" }
+      - { label: "SEO Pinterest Creator",      name: "seo_pinterest_creator",       widget: "string" }
+      - { label: "SEO Pinterest Image",        name: "seo_pinterest_image",         widget: "image" }
+      - { label: "SEO Pinterest Image Alt",    name: "seo_pinterest_image_alt",     widget: "string" }
+
+# Reddit
+      - { label: "SEO Reddit Title",           name: "seo_reddit_title",            widget: "string" }
+      - { label: "SEO Reddit Description",     name: "seo_reddit_description",      widget: "text" }
+      - { label: "SEO Reddit Site",            name: "seo_reddit_site",             widget: "string" }
+      - { label: "SEO Reddit Creator",         name: "seo_reddit_creator",          widget: "string" }
+      - { label: "SEO Reddit Image",           name: "seo_reddit_image",            widget: "image" }
+      - { label: "SEO Reddit Image Alt",       name: "seo_reddit_image_alt",        widget: "string" }
+
+# Instagram
+      - { label: "SEO Instagram Title",        name: "seo_instagram_title",         widget: "string" }
+      - { label: "SEO Instagram Description",  name: "seo_instagram_description",   widget: "text" }
+      - { label: "SEO Instagram Site",         name: "seo_instagram_site",          widget: "string" }
+      - { label: "SEO Instagram Creator",      name: "seo_instagram_creator",       widget: "string" }
+      - { label: "SEO Instagram Image",        name: "seo_instagram_image",         widget: "image" }
+      - { label: "SEO Instagram Image Alt",    name: "seo_instagram_image_alt",     widget: "string" }
+
+# Threads
+      - { label: "SEO Threads Title",          name: "seo_threads_title",           widget: "string" }
+      - { label: "SEO Threads Description",    name: "seo_threads_description",     widget: "text" }
+      - { label: "SEO Threads Site",           name: "seo_threads_site",            widget: "string" }
+      - { label: "SEO Threads Creator",        name: "seo_threads_creator",         widget: "string" }
+      - { label: "SEO Threads Image",          name: "seo_threads_image",           widget: "image" }
+      - { label: "SEO Threads Image Alt",      name: "seo_threads_image_alt",       widget: "string" }
+
+# Twitter
+      - { label: "SEO Twitter Card",           name: "seo_twitter_card",            widget: "select", options: ["summary", "summary_large_image", "app", "player"] }
+      - { label: "SEO Twitter Site",           name: "seo_twitter_site",            widget: "string" }
+      - { label: "SEO Twitter Creator",        name: "seo_twitter_creator",         widget: "string" }
+      - { label: "SEO Twitter Title",          name: "seo_twitter_title",           widget: "string" }
+      - { label: "SEO Twitter Description",    name: "seo_twitter_description",     widget: "text" }
+      - { label: "SEO Twitter Image",          name: "seo_twitter_image",           widget: "image" }
+      - { label: "SEO Twitter Image Alt",      name: "seo_twitter_image_alt",       widget: "string" }
+
+# Facebook / Open Graph
+      - { label: "SEO Open Graph Title",       name: "seo_og_title",                widget: "string" }
+      - { label: "SEO Open Graph Description", name: "seo_og_description",          widget: "text" }
+      - { label: "SEO Open Graph Site Name",   name: "seo_og_site_name",            widget: "string" }
+      - { label: "SEO Open Graph Type",        name: "seo_og_type",                 widget: "string" }
+      - { label: "SEO Open Graph URL",         name: "seo_og_url",                  widget: "string" }
+      - { label: "SEO Open Graph Image",       name: "seo_og_image",                widget: "image" }
+      - { label: "SEO Open Graph Image Alt",   name: "seo_og_image_alt",            widget: "string" }
+      - { label: "SEO Facebook App ID",        name: "seo_fb_app_id",               widget: "string" }
+      - options:
+      - {label: "all news", value: "all-news"}
+      - {label: "world news", value: "world-news"}
+      - {label: "uk news", value: "uk-news"}
+      - {label: "us news", value: "us-news"}
+      - {label: "europe news", value: "europe-news"}
+      - {label: "asia news", value: "asia-news"}
+      - {label: "africa news", value: "africa-news"}
+      - {label: "australia news", value: "australia-news"}
+      - {label: "middle east news", value: "middle-east-news"}
+      - {label: "business news", value: "business-news"}
+      - {label: "technology news", value: "technology-news"}
+
+      - {label: "all politics", value: "all-politics"}
+      - {label: "us politics", value: "us-politics"}
+      - {label: "uk politics", value: "uk-politics"}
+      - {label: "europe politics", value: "europe-politics"}
+      - {label: "asia politics", value: "asia-politics"}
+      - {label: "africa politics", value: "africa-politics"}
+      - {label: "democracy", value: "democracy"}
+      - {label: "republican", value: "republican"}
+      - {label: "monarchy", value: "monarchy"}
+      - {label: "dictatorship", value: "dictatorship"}
+      - {label: "communism", value: "communism"}
+      - {label: "socialism", value: "socialism"}
+      - {label: "libertarianism", value: "libertarianism"}
+      - {label: "anarchism", value: "anarchism"}
+      - {label: "conservatism", value: "conservatism"}
+      - {label: "oligarchy", value: "oligarchy"}
+      - {label: "theocracy", value: "theocracy"}
+      - {label: "aristocracy", value: "aristocracy"}
+      - {label: "capitalism", value: "capitalism"}
+      - {label: "fascism", value: "fascism"}
+      - {label: "anarchism", value: "anarchism"}
+      - {label: "middle east politics", value: "middle-east-politics"}
+      - {label: "latin america politics", value: "latin-america-politics"}
+      - {label: "oceania politics", value: "oceania-politics"}
+
+      - {label: "all religion", value: "all-religion"}
+      - {label: "christianity", value: "christianity"}
+      - {label: "islam", value: "islam"}
+      - {label: "hinduism", value: "hinduism"}
+      - {label: "buddhism", value: "buddhism"}
+      - {label: "judaism", value: "judaism"}
+      - {label: "sikhism", value: "sikhism"}
+      - {label: "taoism", value: "taoism"}
+      - {label: "confucianism", value: "confucianism"}
+      - {label: "shintoism", value: "shintoism"}
+      - {label: "zoroastrianism", value: "zoroastrianism"}
+      - {label: "bahai", value: "bahai"}
+      - {label: "jainism", value: "jainism"}
+
+      - {label: "shamanism", value: "shamanism"}
+      - {label: "animism", value: "animism"}
+      - {label: "paganism", value: "paganism"}
+      - {label: "atheism", value: "atheism"}
+      - {label: "agnosticism", value: "agnosticism"}
+      - {label: "spirituality", value: "spirituality"}
+      - {label: "new age", value: "new-age"}
+      - {label: "occult", value: "occult"}
+
+      - {label: "all history", value: "all-history"}
+      - {label: "biblical history", value: "biblical history"}
+      - {label: "islamic history", value: "islamic-history"}
+      - {label: "ancient history", value: "ancient-history"}
+      - {label: "medieval history", value: "medieval-history"}
+      - {label: "greek mythology", value: "greek-mythology"}
+      - {label: "norse mythology", value: "norse-mythology"}
+      - {label: "celtic mythology", value: "celtic mythology"}
+      - {label: "egyptian mythology", value: "egyptian-mythology"}
+      - {label: "roman empire", value: "roman-empire"}
+      - {label: "modern history", value: "modern-history"}
+      - {label: "political histoy", value: "political history"}
+      - {label: "ancient civilizations", value: "ancient-civilizations"}
+      - {label: "military history", value: "military history"}
+      - {label: "world wars", value: "world-wars"}
+      - {laqbel: "cold war", value: "cold-war"}
+      - {label: "american history", value: "american-history"}
+      - {label: "european history", value: "european-history"}
+      - {label: "asian history", value: "asian-history"}
+      - {label: "indian history", value: "indian history"}
+      - {label: "japanese history", value: "japanese history"}
+      - {label: "russian history", value: "russian history"}
+      - {label: "african history", value: "african-history"}
+      - {label: "chinese history", value: "chinese history"}
+      - {label: "korean history", value: "korean history"}
+      - {label: "asia history", value: "asia history"}
+      - {label: "Vietnamese History", value: "Vietnamese History"}
+      - {label: "ice age", value: "ice-age"}
+      - {label: "dark age", value: "dark-age"}
+      - {label: "historical events", value: "historical-events"}
+      - {label: "french revolution", value: "french-revolution"}
+      - {label: "industrial revolution", value: "industrial-revolution"}
+      - {label: "colonialism", value: "colonialism"}
+      - {label: "mesopotamian mythology", value: "mesopotamian mythology"}
+      - {label: "political history", value: "political history"}
+      - {label: "economic history", value: "economic history"}
+      - {label: "social history", value: "social history"}
+      - {label: "cultural history", value: "cultural history"}
+      - {label: "intellectual history", value: "intellectual history"}
+      - {label: "environmental history", value: "environmental history"}
+      - {labebl: "sceintific history", value: "scientific history"}
+      - {label: "history of medicine", value: "history of medicine"}
+      - {label: "art history", value: "art history"}
+      - {label: "music history", value: "music history"}
+      - {label: "history of science", value: "history of science"}
+      - {label: "history of technology", value: "history of technology"}
+      - {label: "history of philosophy", value: "history of philosophy"}
+      - {label: "history of religion", value: "history of religion"}
+      - {label: "history of literature", value: "history of literature"}
+
+      - {label: "all sports", value: "all-sports"}
+      - {label: "football", value: "football"}
+      - {label: "basketball", value: "basketball"}
+      - {label: "baseball", value: "baseball"}
+      - {label: "tennis", value: "tennis"}
+      - {label: "cricket", value: "cricket"}
+      - {label: "hockey", value: "hockey"}
+      - {label: "golf", value: "golf"}
+      - {label: "rugby", value: "rugby"}
+      - {label: "swimming", value: "swimming"}
+      - {label: "athletics", value: "athletics"}
+      - {label: "boxing", value: "boxing"}
+      - {label: "wrestling", value: "wrestling"}
+      - {label: "motorsports", value: "motorsports"}
+      - {label: "cycling", value: "cycling"}
+      - {label: "gymnastics", value: "gymnastics"}
+      - {label: "volleyball", value: "volleyball"}
+      - {lablel: "formula 1", value: "formula-1"}
+      - {label: "olympics", value: "olympics"}
+      - {label: "martial art", value: "martial-art"}
+
+      - {label: "all bizzarre", value: "all-bizarre"}
+      - {label: "strange", value: "strange"}
+      - {label: "weird", value: "weird"}
+      - {label: "unexplained", value: "unexplained"}
+      - {label: "mysterious", value: "mysterious"}
+      - {label: "paranormal", value: "paranormal"}
+      - {label: "supernatural", value: "supernatural"}
+      - {label: "conspiracy", value: "conspiracy"}
+      - {label: "occult", value: "occult"}
+      - {label: "witchcraft", value: "witchcraft"}
+      - {label: "magic", value: "magic"}
+      - {label: "voodoo", value: "voodoo"}
+      - {label: "satanism", value: "satanism"}
+      - {label: "ufos", value: "ufos"}
+      - {label: "aliens", value: "aliens"}
+      - {label: "ghosts", value: "ghosts"}
+      - {label: "demonology", value: "demonology"}
+      - {label: "exorcism", value: "exorcism"}
+      - {label: "spiritualism", value: "spiritualism"}
+      - {label: "astrology", value: "astrology"}
+      - {label: "horoscopes", value: "horoscopes"}
+      - {label: "tarot", value: "tarot"}
+      - {label: "palmistry", value: "palmistry"}
+      - {label: "numerology", value: "numerology"}
+      - {label: "alchemy", value: "alchemy"}
+
+      - {label: "all entertainment", value: "all-entertainment"}
+      - {label: "movies", value: "movies"}
+      - {label: "tv shows", value: "tv shows"}
+      - {label: "music", value: "music"}
+      - {label: "celebrities", value: "celebrities"}
+      - {label: "theater", value: "theater"}
+      - {label: "comedy", value: "comedy"}
+      - {label: "drama", value: "drama"}
+      - {label: "action", value: "action"}
+      - {label: "adventure", value: "adventure"}
+      - {label: "horror", value: "horror"}
+      - {label: "fashion", value: "fashion"}
+      - {label: "cuisine", value: "cuisine"}
+      - {label: "sport", value: "sport"}
+      - {label: "games", value: "games"}
+      - {label: "festivals", value: "festivals"}
+      - {label: "holidays", value: "holidays"}
+      - {label: "traditions", value: "traditions"}
+      - {label: "customs", value: "customs"}
+      - {label: "superstitions", value: "superstitions"}
+      - {label: "forklore", value: "folklore"}
+      - {label: "mythology", value: "mythology"}
+      - {label: "philosophy", value: "philosophy"}
+      - {label: "religion", value: "religion"}
+
+      - {label: "all sceince", value: "all-science"}
+      - {label: "human", value: "human"}
+      - {label: "animal", value: "animal"}
+      - {label: "plant", value: "plant"}
+      - {label: "our world", value: "our world"}
+      - {label: "space", value: "space"}
+      - {label: "technology", value: "technology"}
+      - {label: "health", value: "health"}
+      - {label: "environment", value: "environment"}
+      - {label: "climate", value: "climate"}
+
+      - {label: "all culture",value: "all culture"}
+      - {label: "music", value: "music"}
+      - {label: "literature", value: "literature"}
+      - {labeel: "art", value: "art"}
+      - {label: "film", value: "film"}
+      - {Label : "theatre", value: "theatre"}
+      - {label : "dance", value: "dance"}
+      - {label: "fashion", value: "fashion"}
+      - {label: "cuisine", value: "cuisine"}
+      - {label: "games", value: "games"}
+      - {label: "sports", value: "sports"}
+      - {label: "festivals", value: "festivals"}
+      - {label: "holidays", value: "holidays"}
+      - {label: "traditions", value: "traditions"}
+      - {label: "customs", value: "customs"}
+      - {label: "superstitions", value: "superstitions"}
+      - {label: "folklore", value: "folklore"}
+      - {label: "mythology", value: "mythology"}
+      - {label: "philosophy", value: "philosophy"}
+      - {label: "religion", value: "religion"}
+      - {label: "history", value: "history"}
+      - {label: "languages", value: "language"}
+      - {label: "dialects", value: "dialects"}
+      - {label: "slang", value: "slang"}
+      - {label: "accents", value: "accents"}
+      - {label: "idioms", value: "idioms"}
+      - {label: "politics", value: "politics"}
+      - {label: "economics", value: "economics"}
+      - {label: "sociology", value: "sociology"}
+
+      - {label: "all real estate", value: "all-real-estate"}
+      - {label: "buying", value: "buying"}
+      - {label: "selling", value: "selling"}
+      - {label: "renting", value: "renting"}
+      - {label: "leasing", value: "leasing"}
+      - {label: "mortgages", value: "mortgages"}
+      - {label: "loans", value: "loans"}
+      - {label: "financing", value: "financing"}
+      - {label: "investing", value: "investing"}
+      - {label: "property management", value: "property-management"}
+      - {label: "home improvement", value: "home-improvement"}
+      - {label: "interior design", value: "interior-design"}
+      - {label: "landscaping", value: "landscaping"}
+      - {label: "home staging", value: "home-staging"}
+      - {label: "home inspection", value: "home-inspection"}  
+      - {label: "real estate agents", value: "real-estate-agents"}
+
+      - {label: "all technology", value: "all-technology"}
+      - {label: "mobile", value: "mobile"}
+      - {label: "computers", value: "computers"}
+      - {label: "internet", value: "internet"}
+      - {label: "software development", value: "software development"}
+      - {label: "hardware", value: "hardware development"}
+      - {label: "networking", value: "networking"}
+      - {label: "gadgets", value: "gadgets"}
+      - {label: "apps", value: "apps"}
+      - {label: "web development", value: "web development"}
+      - {label: "programming", value: "programming"}
+      - {label: "coding", value: "coding"}
+      - {label: "social media", value: "social media"}
+      - {label: "cybersecurity", value: "cybersecurity"}
+      - {label: "ai", value: "ai"}
+      - {label: "machine learning", value: "machine-learning"}
+      - {label: "deep learning", value: "deep learning"}
+      - {label: "data science", value: "data science"}
+      - {label: "big data", value: "big data"}
+      - {label: "cloud computing", value: "cloud computing"}
+      - {label: "blockchain", value: "blockchain"}
+      - {label: "cryptocurrency", value: "cryptocurrency"}
+      - {label: "virtual reality", value: "virtual-reality"}
+      - {label: "augmented reality", value: "augmented-reality"}
+      - {label: "internet of things", value: "internet-of-things"}
+      - {label: "wearable technology", value: "wearable-technology"}
+      - {label: "5G", value: "5G"}
+      - {label: "quantum computing", value: "quantum-computing"}
+      - {label: "6G", value: "6G"}
+      - {label: "telecommunications", value: "telecommunications"}
+      - {label: "satellite technology", value: "satellite-technology"}
+      - {label: "biotechnology", value: "biotechnology"}
+      - {label: "nanotechnology", value: "nanotechnology"}
+
+      - {label: "all health", value: "all-health"}
+      - {label: "fitness", value: "fitness"}
+      - {label: "nutrition", value: "nutrition"}
+      - {label: "wellness", value: "wellness"}
+      - {label: "mental health", value: "mental-health"}
+      - {label: "physical health", value: "physical-health"}
+      - {label: "emotional health", value: "emotional-health"}
+      - {label: "spiritual health", value: "spiritual-health"}
+      - {label: "social health", value: "social-health"}
+      - {label: "occupational health", value: "occupational-health"}
+      - {label: "nutritions", value: "nutritions"}
+      - {label: "diets", value: "diets"}
+      - {label: "weight loss", value: "weight-loss"}
+      - {label: "weight gain", value: "weight-gain"}
+      - {label: "weight management", value: "weight-management"}
+      - {label: "exercise", value: "exercise"}
+      - {label: "yoga", value: "yoga"}
+      - {label: "holistic healing", value: "holistic healing"}
+      - {label: "meditation", value: "meditation"}
+      - {label: "mindfulness", value: "mindfulness"}
+      - {label: "stress management", value: "stress-management"}
+      - {label: "anxiety management", value: "anxiety-management"}
+      - {label: "depression management", value: "depression-management"}
+      - {label: "mental illness", value: "mental-illness"}
+      - {label: "homeopathy", value: "homeopathy"}
+      - {label: "naturopathy", value: "naturopathy"}
+      - {label: "acupuncture", value: "acupuncture"}
+      - {label: "ayurveda", value: "ayurveda"}
+      - {label: "herbalism", value: "herbalism"}
+      - {label: "aromatherapy", value: "aromatherapy"}
+      - {label: "reflexology", value: "reflexology"}
+      - {label: "preventive medicine", value: "preventive-medicine"}
+      - {label: "public health", value: "public-health"}
+      - {label: "community health", value: "community-health"}
+      - {label: "global health", value: "global-health"}
+      - {label: "environmental health", value: "environmental-health"}
+      - {label: "occupational health", value: "occupational-health"}
+      - {label: "healthcare", value: "healthcare"}
+      - {label: "healthcare reform", value: "healthcare-reform"}
+      - {label: "healthcare system", value: "healthcare-system"}
+      - {label: "healthcare management", value: "healthcare-management"}
+      - {label: "healthcare administration", value: "healthcare-administration"}
+      - {label: "health insurance", value: "health-insurance"}
+      - {label: "healthcare technology", value: "healthcare-technology"}
+      - {label: "healthcare innovation", value: "healthcare innovation"}
+      - {label:  "healthcare quality", value: "healthcare quality"}
+      - {label: "healthcare delivery", value: "healthcare delivery"}
+      - {label: "healthcare services", value: "healthcare services"}
+
+      - {label: "all travel", value: "all-travel"}
+      - {label: "adventure", value: "adventure"}
+      - {label: "backpacking", value: "backpacking"}
+      - {label: "camping", value: "camping"}
+      - {label: "snowboarding", value: "snowboarding"}
+      - {label: "skiing", value: "skiing"}
+      - {label: "surfing", value: "surfing"}
+      - {label: "hiking", value: "hiking"}
+      - {label: "road trip", value: "road-trip"}
+      - {label: "cruising", value: "cruising"}
+      - {label: "train journey", value: "train-journey"}
+      - {label: "flight trip", value: "flight-trip"}
+      - {label: "sailing", value: "sailing"}
+      - {label: "motorcycling", value: "motorcycling"}
+      - {label: "cycling", value: "cycling"}
+      - {label: "walking", value: "walking"}
+      - {label: "bus journey", value: "bus-journey"}
+      - {label: "driving", value: "driving"}
+      - {label: "marathon", value: "marathon"}
+      - {label: "running", value: "running"}
+      - {label: "traithlon", value: "triathlon"}
+      - {label: "safari", value: "safari"}
+      - {label: "beach vacations", value: "beach-vacations"}
+      - {label: "trekking", value: "trekking"}
+      - {label: "mountaineering", value: "mountaineering"}
+      - {label: "climbing", value: "climbing"}
+      - {label: "scuba diving", value: "scuba-diving"}
+      - {label: "ironman", value: "ironman"}
+      - {label: "sky diving", value: "sky-diving"}
+      - {label: "ultra marathon", value: "ultra-marathon"}
+      - {label: "snorkeling", value: "snorkeling"}
+      - {label: "luxury travel", value: "luxury-travel"}
+      - {label: "buget list travel", value: "bucket-list-travel"}         
+      - {label: "travel tips", value: "travel-tips"}  
+
+      - {label: "all education", value: "all-education"}
+      - {label: "school", value: "school"}
+      - {label: "college", value: "college"}
+      - {label: "university", value: "university"}
+      - {label: "online learning", value: "online-learning"}
+      - {label: "distance learning", value: "distance-learning"}
+      - {label: "e-learning", value: "e-learning"}
+      - {label: "adult education", value: "adult-education"}
+      - {label: "vocational education", value: "vocational-ducation"}
+      - {label: "apprenticeship", value: "apprenticeship"}
+      - {label: "internship", value: "internship"}
+      - {label: "mentorship", value: "mentorship"}
+      - {label: "higher education", value: "higher-education"}
+      - {label: "open education", value: "open-education"}
+      - {label: "lifelong learning", value: "lifelong-learning"}
+      - {label: "self-directed learning", value: "self-directed-learning"}
+      - {label: "technical education", value: "technical-education"}
+      - {label: "moocs", value: "moocs"}
+      - {label: "professional education", value: "professional-education"}
+      - {label: "post graduate education", value: "post-graduate-education"}
+      - {label: "doctoral education", value: "doctoral-education"}
+      - {label: "reasearch", value: "research"}
+      - {label: "scholarship", value: "scholarship"}
+      - {label: "fellowship", value: "fellowship"}
+      - {label: "grants", value: "grants"}
+      - {label: "bursary", value: "bursary"}
+      - {label: "tuition", value: "tuition"}
+      - {label: "loans", value: "loans"}
+
+      - {label: "all business", value: "all business"}
+      - {label: "entrepreneurship", value: "entrepreneurship"}
+      - {label: "startups", value: "startups"}
+      - {label: "small business", value: "small-business"}
+      - {label: "medium business", value: "medium-business"}
+      - {label: "large business", value: "large-business"}
+      - {label: "corporate", value: "corporate"}
+      - {label: "companies", value: "companies"}
+      - {label: "firms", value: "firms"}
+      - {label: "enterprises", value: "enterprises"}
+      - {label: "organisation", value: "organisation"}
+      - {label: "association", value: "association"}
+      - {label: "institution",value:institution}
+      - {label: office, value: office}
+      - {label: "business models", value: "business-models"}
+      - {label: "business strategy", value: "business-strategy"}
+      - {label: "business development", value: "business-development"}
+      - {label: "business management", value: "business-management"}
+      - {label: "business strategy", value: "business-strategy"}
+      - {label: "workplace", value: "workplace"}
+      - {label: "workforce", value: "workforce"}
+      - {label: "employee", value: "employee"}
+      - {label: "employer", value: "employer"}
+      - {label: "manager", value: "manager"}
+      - {label: "excutive", value: "excutive"}
+      - {label: "director", value: "director"}
+      - {label: "ceo", value: "ceo"}
+      - {label: "cfo", value: "cfo"}
+      - {label: "coo", value: "coo"}
+      - {label: "cto", value: "cto"}
+      - {label: "workplace", value: workplac}
+      - {label: "cio", value: "cio"}
+      - {label: "ciso", value: "ciso"}
+      - {label: "cdo", value: "cdo"}
+      - {label: "cpo", value: "cpo"}
+      - {label: "clo", value: "clo"}
+      - {label: "cro", value: "cro"}
+      - {label: "cso", value: "cso"}
+      - {label: "cco", value: "cco"}
+      - {label: "cbo", value: "cbo"}
+      - {label: "cvo", value: "cvo"}
+
+      - {label: "all food", value: "all food"}
+      - {label: "continental dishes", value: "continental-dishes"}
+      - {label: "american dishes", value: "american-dishes"}
+      - {label: "european dishes", value: "european-dishes"}
+      - {label: "african dishes", value: "african-dishes"}
+      - {label: "asian dishes", value: "asian-dishes"}
+      - {label: "italian dishes", value: "italian-dishes"}
+      - {label: "chinese dishes", value: "chinese-dishes"}
+      - {label: "indian dishes", value: "indian-dishes"}
+      - {label: "german dishes", value: "german-dishes"}
+      - {label: "british dishes", value: "british-dishes"}
+      - {label: "mexican dishes", value: "mexican-dishes"}
+      - {label: "oceanian dishes", value: "oceanian-dishes"}
+      - {label: "south american dishes", value: "south-american-dishes"}
+      - {label: "north american dishes", value: "north-american-dishes"}
+      - {label: "canadian dishes", value: "canadian-dishes"}
+      - {label: "australian dishes", value: "australian-dishes"}
+      - {label: "luxembourgish dishes", value: "luxembourgish-dishes"}
+      - {label: "japanese dishes", value: "japanese-dishes"}
+      - {label: "korean dishes", value: "korean-dishes"}
+      - {label: "thai dishes", value: "thai-dishes"}
+      - {label: "vietnamese dishes", value: "vietnamese-dishes"}
+      - {label: "greek dishes", value: "greek-dishes"}
+      - {label: "spanish dishes", value: "spanish-dishes"}
+      - {label: "french dishes", value: "french-dishes"}
+      - {label: "turkish dishes", value: "turkish-dishes"}
+      - {label: "middle eastern dishes", value: "middle-eastern-dishes"}
+      - {label: "caribbean dishes", value: "caribbean-dishes"}
+      - {label: "south american dishes", value: "south-american-dishes"}
+      - {label: "vegetarian dishes", value: "vegetarian-dishes"}
+      - {label: "vegan dishes", value: "vegan-dishes"}
+      - {label: "cooking", value: "cooking"}
+      - {label: "baking", value: "baking"}
+      - {label: "grilling", value: "grilling"}
+      - {label: "roasting", value: "roasting"}
+      - {label: "steaming", value: "steaming"}
+      - {label: "boiling", value: "boiling"}
+
+      - {label: "all fashion", value: "all fashion"}
+      - {label: "clothing", value: "clothing"}
+      - {label: "accessories", value: "accessories"}
+      - {label: "footwear", value: "footwear"}
+      - {label: "jewelry", value: "jewelry"}
+      - {label: "hairstyles", value: "hairstyles"}
+      - {label: "makeup", value: "makeup"}
+      - {label: "skincare", value: "skincare"}
+      - {label: "nail care", value: "nail-care"}
+      - {label: "cosmetics", value: "cosmetics"}
+      - {label: "fragrance", value: "fragrance"}
+      - {label: "nail art", value: "nail-art"}
+      - {label: "fashion trends", value: "fashion-trends"}
+      - {label: "fashion history", value: "fashion-history"}
+      - {label: "fashion design", value: "fashion-design"}
+      - {label: "fashion illustration", value: "fashion illustration"}
+      - {label: "fashion photography", value: "fashion photography"}
+      - {label: "fashion shows", value: "fashion shows"}
+
+      - {label: "all environment", value: "all environment"}
+      - {label: "climate change", value: "climate change"}
+      - {label: "global warming", value: "global warming"}
+      - {label: "pollution", value: "pollution"}
+      - {label: "deforestation", value: "deforestation"}
+      - {label: "desertification", value: "desertification"}
+      - {label: "drought", value: "drought"}
+      - {label: "flood", value: "flood"}
+      - {labebl: "hurricane", value: "hurricane"}
+      - {labebl: "tornado", value: "tornado"}
+      - {label: "typhoon ", value: "typhoon"}
+      - {label: "cyclone", value: "cyclone"}
+      - {label: "earthquake", value: "earthquake"}
+      - {label: "tsunami", value: "tsunami"}
+      - {label: "vulcano", value: "vulcano"}
+      - {label: "landslide", value: "landslide"}
+      - {label: "sinkhol", value: "sinkhole"}
+      - {label: "wildfire", value: "wild fire"}
+      - {label: "bushfire", value: "bush fire"}
+      - {label: "forest fire", value: "forest fire"}
+      - {label: "urban fire", value: "urban fire"}
+      - {label: "industrial fire", value: "industrial fire"}
+      - {label: "nuclear disaster", value: "nuclear disaster"}
+      - {label: "chemical disaster", value: "chemical disaster"}
+      - {label: "biological disaster", value: "biological disaster"}
+      - {label: "pandemic", value: "pandemic"}
+      - {label: "epidemic", value: "epidemic"}
+      - {label: "outbreak", value: "outbreak"}
+      - {label: "plague", value: "plague"}
+      - {label: "pestilence", value: "pestilence"}
+      - {label: "infection", value: "infection"}
+      - {label: "contagion", value: "contagion"}
+      - {label: "virus", value: "virus"}
+      - {label: "bacteria", value: "bacteria"}
+      - {label: "fungus", value: "fungus"}
+      - {label: "parasite", value: "parasite"}
+
+      - {label: "all wildlife", value: "all wildlife"}
+      - {label: "mammals", value: "mammals"}
+      - {label: "birds", value: "birds"}
+      - {label: "reptiles", value: "reptiles"}
+      - {label: "amphibians", value: "amphibians"}
+      - {label: "fish", value: "fish"}
+      - {label: "insects", value: "insects"}
+      - {label: "arachnids", value: "arachnids"}
+      - {label: "crustaceans", value: "crustaceans"}
+      - {label: "mollusks", value: "mollusks"}
+      - {label: "corals", value: "corals"}
+      - {label: "sponges", value: "sponges"}
+      - {label: "echinoderms", value: "echinoderms"}
+      - {label: "cnidarians", value: "cnidarians"}
+      - {label: "plants", value: "plants"}
+      - {label: "trees", value: "trees"}
+      - {label: "flowers", value: "flowers"}
+      - {label: "fruits", value: "friuts"}
+      - {label: "vegetables",value: "vegetables"}
+      - {label: "herbs", value: "herbs"}
+      - {label: "spices", value: "spices"}
+      - {label: "nuts", value: "nuts"}
+      - {label: "seeds", value: "seeds"}
+      - {label: "grains", value: "grains"}
+      - {label: "legumes", value: "legumes"}
+      - {label: "pulses", value: "pulses"}
+      - {label: "cereals", value: "cereals"}
+      - {label: "oilseeds", value: "oilseeds"}
+      - {label: "fungi", value: "fungi"}
+      - {label: "algea", value: "algea"}
+      - {label: "lichens", value: "lichens"}
+      - {label: "mosses", value: "mosses"}
+      - {label: "ferns", value: "ferns"}
+
+      - {label: "all space", value: "all space"}
+      - {label: "astronomy", value: "astronomy"}
+      - {label: "astrophysics", value: "astrophysics"}
+      - {label: "cosmology", value: "cosmology"}
+      - {label: "astrobiology", value: "astrobiology"}
+      - {label: "astrochemistry", value: "astrochemistry"}
+      - {label: "astrogeology", value: "astrogeology"}
+      - {label: "astrography", value: "astrography"}
+      - {label: "astroinformatics", value: "astroinformatics"} 
+      - {label: "astrostatistics", value: "astrostatistics"}
+      - {label: "astroengineering", value: "astroengineering"}
+      - {label: "astrocartography", value: "astrocartography"}
+      - {label: "astrology", value: "astrology"}
+      - {label: "horoscope",value: "horoscope"}
+      - {label: "palmistry", value: "palmistry"}
+      - {label: "numerology", value: "numerolgy"}
+      - {label: "astrotheology", value: "astrotheology"}
+      - {label: "tarot", value: tarot}
+      - {label: "astrognosy", value: "astrognosy"}
+      - {label: "astroethics", value: "astroethics"}
+      - {label: "astroecology", value: "astroecology"}
+
+      - {label: "all opinion", value: "all opinion"}
+      - {label: "political-opinion", value: "political-opinion"}
+      - {label: "religion-opinion", value: "religion-opinion"}
+      - {label: "philosophy", value: "philosophy"}
+      - {label: "ideology", value: "ideology"}
+      - {label: "belief", value: "belief"}
+      - {label: "faith", value: "faith"}
+      - {label: "spirituality", value: "spirituality"}
+      - {label: "secular", value: "secular"}
+      - {label: "antheism", value: "antheism"}
+      - {label: "agnosticism", value: "agnosticism"}
+      - {label: "humanism", value: "humanism"}
+      - {label: "skeptism", value: "skeptism"}
+      - {label: "relationalism", value: "relationalism"}
+      - {label: "empiricism", value: "empiricism"}
+      - {label: "pragmatism", value: "pragmatism"}
+      - {label: "existentialism", value: "existentialism"}
+      - {label: "nihilism",value: "nihilism"}
+      - {label: "absurdism", value: "absurdism"}
+      - {label: "postmodernism", value: "postmodernism"}
+      - {label: "deconstruction", value: "deconstruction"}
+      - {label: "critical theory", value: "critical theory"}
+      - {label: "feminism", value: "feminism"}
+      - {label: "qeer theory", value: "qeer theory"}
+
+      - {label: "all ai", value: "all ai"}
+      - {label: "Artificial Intelligence", value: "Artificial Intelligence"}
+      - {label: "machine learning", value: "machine-learning"}
+      - {label: "deep learning", value: "deep learning"}
+      - {label: "data science", value: "data science"}
+      - {label: "web development", value: "web development"}
+      - {label: "app development", value: "app development"}
+      - {label: "game development", value: "game development"}
+      - {label: software development", value: "software development"}
+      - {label: "hardware development", value: "hardware development"}
+      - {label: "network", value: "network"}
+      - {label: "telecommunications", value: "telecommunications"}
+
+      - {label: "all social", value: "all social"}
+      - {label: "society", value: "society"}
+      - {label: "culture", value: "culture"}
+      - {label: "civilization", value: "civilization"}
+      - {label: "community", value: "community"}
+      - {label: "population", value: "population"}
+      - {label: "demograhy", value: "demograhy"}
+
+      - {label: "all society", value: "all society"}
+      - {label: "social science",value: "social science"}
+      - {label: "social studies", value: "social studies"}
+      - {label: "social research", value: "social theory"}
+      - {label: "social philosophy", value: "social philosophy"}
+      - {label: "social policy", social policy"}
+      - {label: "social work", value: "social work"}
+      - {label: "social welfare", value: social welfare}
+      - {label: "social equity", value: "social equity"}
+      - {label: "social justice",value: "social justice"}
+      - {label: "social inclusion", value: "social inclusion"}
+      - {label: "social exclusion",value: "social exclusion"}
+      - {label: "social mobilty",value: "social mobility"}
+      - {label: "social change", value: "social change"}
+      - {label: "social progress", value: "social progress"}
+      - {label: "social development", value: "social development"}
+      - {label: "social innovation", social innovation"}
+      - {label: "social entrepreneurship", value: "social entrepreneurship"}
+      - {label: "social enterprise", value: "social enterprise"}
+      - {label: "social impact", value: "social impact"}
+      - {label: "social responsibily",value: "social responsiblity"}
+      - {label: "social accountability", value: "social accountability"}
+      - {label: "social ethics",value: "social ethics"}
+      - {label: "social morality", value: morality"}
+      - {label: "social norms", value : "social norms"}];
+
+      
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      -
+
+
+
+      
+
+
+
+
+
+      
+
+
+
+      
+
+
+      
+
