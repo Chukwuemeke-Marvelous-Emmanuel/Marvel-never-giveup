@@ -5,10 +5,6 @@
   command   = "npm run build"   # Build command
   functions = "functions"       # Functions directory
 
-[build]
-  command = "npm install && npm run lint && npm run build"
-  publish = "dist/"
-
 # Automatically generate sitemap.xml at each build
 [[plugins]]
   package = "@netlify/plugin-sitemap"
@@ -25,17 +21,6 @@
     minifyCSS  = true
     minifyHTML = true
 
-[[plugins]]
-  package = "@netlify/plugin-zip-it-and-ship-it"
-  [plugins.inputs]
-    nodeVersion            = "16.x"
-    functionsDir           = "functions"
-    packageManager         = "npm"
-    packageManagerVersion  = "8.x"
-    includeFiles           = ["public/**/*", "functions/**/*"]
-    excludeFiles           = ["node_modules/**", "public/**/*.map", "functions/**/*.map"]
-    includePackageJson     = true
-    includePackageLockJson = true
 
 # Security & caching headers (applied to every path)
 [[headers]]
@@ -50,13 +35,6 @@
   Cache-Control               = "no-cache, no-store, must-revalidate"
   Pragma                      = "no-cache"
   Expires                     = "0"
-
-# Redirects
-[[redirects]]
-  from     = "/api/*"
-  to       = "/.netlify/functions/:splat"
-  status   = 200
-  force    = true
 
 [[redirects]]
   from     = "/*"
