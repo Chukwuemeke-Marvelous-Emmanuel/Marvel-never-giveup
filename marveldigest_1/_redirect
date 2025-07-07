@@ -1,0 +1,4 @@
+/*    /index.html   200
+git add netlify.toml _redirects
+git commit -m "Add Netlify config"
+git push origin main
